@@ -29,7 +29,9 @@
 #### **Take new face**
 - Trong thư mục dataset ta tạo các thư mục như sau để chứa dữ liệu:
 ![](./image/data_set.png)
-- Nếu bạn muốn chương trình có thể nhận diện thêm người mới (chưa có trong dataset). Ghi tên người đó vào ô `Name of new person` và nhấn nút `Take new face`.
+- Nếu bạn muốn chương trình có thể nhận diện thêm người mới (chưa có trong dataset). Các bạn ghi tên người đó vào ô `Name of new person` như hình sau:
+![](./image/new_person.png)
+- Sau đó, bạn nhấn nút `Take new face` là xong quá trình thêm dữ liệu mới.
 #### **Training**
 - Sau khi đã thêm người mới vào dataset thì phải train lại model, chỉ cần click vào `Training` và chờ terminal hiện lên dòng `finished` là được.
 #### **Testing**
