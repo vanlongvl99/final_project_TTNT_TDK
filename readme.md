@@ -17,16 +17,21 @@
 
 ### Chạy chương trình:
 - Lưu ý các bạn phải cài đúng các phiên bản của các thư viện trên. Có thể chạy file `requirements.txt` hoặc tự cài riêng từng thư viện: `pip3 install -r requirements.txt`.
-- Clone thư mục này về, `cd` vô forder `final_report_TTNT` tương tự như sau: `~/vanlong/ky6/TriTNT/finish_model/final_report_TTNT$`. Tạ thực hiện tất cả các lệnh tại thư mục này.
-- Vì file model nặng nên không thể upload lên github, các bạn tải file mode [tại đây](https://drive.google.com/drive/folders/1sxYaEGKeChUC4NlozsdAQZT09vQYId8f?usp=sharing). Sau khi download các file model về, ta lưu các file model trong thư mục model_file. Lưu ý không chỉnh sửa tên các file model, nếu không sẽ bị 1 số lỗi gọi tên file khi chạy chương trình.
-- ![scr](./image/fn.png)
+- Clone thư mục này về, `cd` vô forder `final_project_TTNT_TDK` tương tự như sau: `~/vanlong/ky6/TriTNT/final_project_TTNT_TDK$`. Ta thực hiện tất cả các lệnh tại thư mục này và tạo bổ sung 1 số thư mục còn thiếu như hình dưới đây:
+![](./image/main_forder.png)
+- Vì file model nặng nên không thể upload lên github, các bạn tải file mode [tại đây](https://drive.google.com/drive/folders/1sxYaEGKeChUC4NlozsdAQZT09vQYId8f?usp=sharing). Sau khi download các file model về, ta lưu các file model trong thư mục `model_file`. Lưu ý không chỉnh sửa tên các file model, nếu không sẽ bị 1 số lỗi gọi tên file khi chạy chương trình.
+![scr](./image/model_file_img.png)
 - Sau khi cài đặt xong các thư viện và tải file model về, ta chạy lệnh sau để demo kết quả:
 `python3 final_source/gui_demo.py`.
+- Sau khi chạy file `gui_demo.py` giao diện sẽ trông như sau: 
+![](./image/main_gui.png)
 ### Phần giao diện sẽ có 4 chức năng:
 #### **Take new face**
+- Trong thư mục dataset ta tạo các thư mục như sau để chứa dữ liệu:
+![](./image/data_set.png)
 - Nếu bạn muốn chương trình có thể nhận diện thêm người mới (chưa có trong dataset). Ghi tên người đó vào ô `Name of new person` và nhấn nút `Take new face`.
 #### **Training**
-- Sau khi đã thêm người mới vào dataset thì phải train lại model
+- Sau khi đã thêm người mới vào dataset thì phải train lại model, chỉ cần click vào `Training` và chờ terminal hiện lên dòng `finished` là được.
 #### **Testing**
 - Phần này để demo nhận diện cảm xúc và khuôn mặt với file pre-train có sẵn gồm 5 cảm xúc và 28 người khác nhau.
 #### **New Testing** 
