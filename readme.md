@@ -16,7 +16,7 @@
 - mtcnn 0.1.0
 
 ### Chạy chương trình:
-- Lưu ý các bạn phải cài **ĐÚNG các PHIÊN BẢN của các thư viện** trên. Có thể chạy file `requirements.txt` hoặc tự cài riêng từng thư viện: `pip3 install -r requirements.txt`.
+- Lưu ý các bạn phải cài **ĐÚNG các PHIÊN BẢN của các thư viện** trên. Có thể chạy file `requirements.txt` hoặc tự cài riêng từng thư viện: `pip3 install -r requirements.txt`. Sau khi cài đặt các thư viên nhớ kiểm tra lại phiên bản của các thư viên có đúng với yêu cầu chưa.
 - Clone thư mục này về, `cd` vô forder `final_project_TTNT_TDK` tương tự như sau: `~/vanlong/ky6/TriTNT/final_project_TTNT_TDK$`. Ta thực hiện tất cả các lệnh tại thư mục này và tạo bổ sung 1 số thư mục còn thiếu như hình dưới đây:
 ![](./image/main_forder.png)
 - Vì file model nặng nên không thể upload lên github, các bạn tải file mode [tại đây](https://drive.google.com/drive/folders/1sxYaEGKeChUC4NlozsdAQZT09vQYId8f?usp=sharing). Sau khi download các file model về, ta lưu các file model trong thư mục `model_file`. Lưu ý không chỉnh sửa tên các file model, nếu không sẽ bị 1 số lỗi gọi tên file khi chạy chương trình.
