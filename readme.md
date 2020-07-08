@@ -1,11 +1,11 @@
 # Trí Tuệ Nhân Tạo Trong Điều Khiển
 ## Tiểu luận: Emotion and Face Recognition
 ### Nhóm 2
-- Nguyễn Văn Long           Mssv 1712024
-- Huỳnh Mạnh Hưng           Mssv 1711627 
-- Lê Hoàng Hiệp             Mssv 1511069
-- Hứa Hoàng Thanh Trúc      Mssv 1713729
-- Nguyễn Đặng Khôi Nguyên   Mssv 1512207
+- Nguyễn Văn Long___________Mssv 1712024
+- Huỳnh Mạnh Hưng___________Mssv 1711627 
+- Lê Hoàng Hiệp_____________Mssv 1511069
+- Hứa Hoàng Thanh Trúc______Mssv 1713729
+- Nguyễn Đặng Khôi Nguyên___Mssv 1512207
 
 ### Môi trường:
 - Ubuntu 18.04
