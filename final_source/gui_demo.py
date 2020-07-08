@@ -41,8 +41,6 @@ txt2.place(x = 700, y = 215)
 
 model_facenet = load_model('./model_file/facenet_keras.h5')
 model_facenet.load_weights('./model_file/facenet_keras_weights.h5')
-model_cnn_emotion = load_model('./model_file/tranfer_model_emotion.h5')
-model_cnn_emotion.load_weights('./model_file/transfer_weights_emotion.h5')
 
 
 # Take train image of new user.   
@@ -111,7 +109,6 @@ def TrainImages():
             count += 1
             if count == 200:
                 break
-            # image = cv2.cvtColor(image,cv2.COLOR_RGB2HSV)
             image = cv2.resize(image,(160,160))
             image = image/255
             X_train.append(image)
@@ -165,25 +162,16 @@ def face_recognition(index_to_labels, svm_file):
             im_crop = image[bounding_box[1]: bounding_box[1] + bounding_box[3], bounding_box[0]: bounding_box[0]+bounding_box[2] ]            
             if im_crop.shape[0] > 0 and im_crop.shape[1] > 0:
                 # print("facenet")
-                im_cnn = cv2.resize(im_crop,(160,160))
-                im_cnn = im_cnn/255
-                im_cnn = expand_dims(im_cnn, axis = 0)
                 im_embedding = get_embedding(model_facenet, im_crop)
                 # print(datetime.datetime.now())
-                # im_crop = expand_dims(im_crop,axis = 0)
 
                 im_embedding = expand_dims(im_embedding,axis = 0)
-                # in_encoder = Normalizer(norm='l2')
-                # im_test = in_encoder.transform(im_embedding)
                 im_test = Normalizer(norm='l2').transform(im_embedding)
 
                 print("====")
-                # print(loaded_model_SVM.decision_function(im_test))
                 # print("svm")
                 pre_face = loaded_model_SVM.predict_proba(im_test)[0]
-                # pre_emotion = model_cnn_emotion.predict(im_cnn)[0]
                 pre_emotion = emotional_svm_model.predict_proba(im_test)[0]
-                # print("\n",pre,"\n")
                 # print(datetime.datetime.now())
                 for i in range(len(index_to_labels)):
                     print(index_to_labels[i] + ':','{0:0.2f}'.format(pre_face[i]))
@@ -201,7 +189,6 @@ def face_recognition(index_to_labels, svm_file):
                         cv2.putText(image, index_to_labels[max_index] + ': ' + index_to_emotion[max_index_emotion] , (bounding_box[0], bounding_box[1]), cv2.FONT_HERSHEY_SIMPLEX, 1, (30, 255, 30), 2, cv2.LINE_AA)
                     else:
                         cv2.putText(image, index_to_labels[max_index], (bounding_box[0], bounding_box[1]), cv2.FONT_HERSHEY_SIMPLEX, 1, (30, 255, 30), 2, cv2.LINE_AA)
-
                 else:
                     cv2.putText(image, 'unknown', (bounding_box[0], bounding_box[1]), cv2.FONT_HERSHEY_SIMPLEX, 1, (30, 255, 30), 2, cv2.LINE_AA)
         cv2.imshow('image',image)
@@ -212,7 +199,6 @@ def face_recognition(index_to_labels, svm_file):
 
 
 def button_test_video(): 
-    # loaded_model_SVM = joblib.load('./face_recognition_model_svm_1.sav')
     label_to_index = {'manh_hung': 0, 'Mai_ly': 1, 'van_long': 2, 'Tien_dung': 3, 'bich_lan': 4, 'nguyen': 5, 'trong_nghia': 6, 'tien_thang': 7, 'Truong Thanh Sang_1712945': 8, 'Phung Tuan Hung_1611444': 9, 'Nguyen Thi Tuyet_1613947': 10, 'Truong Minh Tuan_1613935': 11, 'Dinh Manh Cuong_1510352': 12, 'Dao Duy Hanh_1711205': 13, 'Hoang Vu Nam_1512062': 14, 'Luu Anh Khoa_1611610': 15, 'Huynh Vuong Vu_1514097': 16, 'Le Phuc Thanh_1613178': 17, 'Dinh Giang Nam_1512059': 18, 'Nguyen Phu Cuong_1710725': 19, 'Ngo Trong Huu_1511438': 20, 'duc_thinh': 21, 'duy_quang': 22, 'hoang_hiep': 23, 'ngoc_anh': 24, 'phuoc_loc': 25, 'hieu_nguyen': 26, 'xuan_tien': 27}
     index_to_labels = {}
     for key,value in label_to_index.items():
